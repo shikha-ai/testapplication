@@ -5,7 +5,11 @@
   "projects": {
     "TestComponents": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "aot": true,
             "outputPath": "dist/TestComponents",
             "index": "src/index.html",
@@ -24,8 +29,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/sample-project/objy-monitor.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
